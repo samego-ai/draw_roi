@@ -1,14 +1,14 @@
-<h1 style="text-align:center">
+<h1 align="center">
     <a href="https://github.com/samego-ai/draw_roi">
         点线框绘制组件
     </a>
 </h1>
-<p style="text-align:center">
+<p align="center">
     基于 GRPC 通信方式绘制 ROI 的组件服务
      <br>
     更加优雅的服务姿势、更加灵活的独立服务，让应用层服务组件更加标准规范
 </p>
-<p style="text-align:center">
+<p align="center">
     <a href="https://goreportcard.com/report/github.com/samego-ai/draw_roi">
         <img src="https://goreportcard.com/badge/github.com/samego-ai/draw_roi" alt="Go Report">
     </a>
