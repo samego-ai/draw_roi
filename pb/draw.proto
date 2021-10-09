@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+service Draw {
+  rpc MultiRectangle (MultiRectangleRequest) returns (MultiRectangleResponse) {}
+}
+
+message MultiRectangleRequest {
+  message rectangle  {
+    int32 X = 1;
+    int32 Y = 2;
+    int32 W = 3;
+    int32 H = 4;
+  }
+
+  string Image = 1;
+  string Title = 2;
+  repeated rectangle Rectangle = 3;
+}
+
+message MultiRectangleResponse {
+  message data {
+    string Image = 1;
+  }
+
+  int32 Code = 1;
+  string Message = 2;
+  data Data = 3;
+}
