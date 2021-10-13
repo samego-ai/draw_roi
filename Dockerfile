@@ -2,11 +2,14 @@ FROM alpine:3.7
 LABEL Maintainer="AlicFeng <a@samego.com>" \
       Description="draw_roi based on golang"
 
-COPY bin/draw_roi /usr/local/sbin/draw_roi
+ENV PATH "$PATH:/usr/local/draw_roi/bin"
 
-COPY resources/font/* /usr/share/fonts/
+WORKDIR /usr/local/draw_roi/
 
-RUN chmod a+x /usr/local/sbin/draw_roi
+COPY bin /usr/local/draw_roi/bin
+COPY resources/font/* /usr/local/draw_roi/fonts/
+
+RUN chmod a+x /usr/local/draw_roi/bin/*
 
 EXPOSE 1280
 

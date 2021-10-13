@@ -18,8 +18,8 @@ type Container struct {
 
 // New 实例化微服务容器
 func New() *Container {
-	golog.Info(config.App.Protocol, config.App.Address)
-	listen, err := net.Listen(config.App.Protocol, config.App.Address)
+	golog.Infof("server listener [%s://%s]", config.Server.Protocol, config.Server.Address)
+	listen, err := net.Listen(config.Server.Protocol, config.Server.Address)
 	if err != nil {
 		log.Fatalf("server listen failure: %v", err)
 	}

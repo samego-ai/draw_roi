@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"github.com/kataras/golog"
 	"github.com/samego-ai/draw_roi/app/service"
 	"github.com/samego-ai/draw_roi/pb"
 	"golang.org/x/net/context"
@@ -12,7 +13,7 @@ type DrawServer struct {
 
 // MultiRectangle /**
 func (server *DrawServer) MultiRectangle(ctx context.Context, in *pb.MultiRectangleRequest) (*pb.MultiRectangleResponse, error) {
-
+	golog.Infof("client request connected [%s]", in.Title)
 	rectangles := make([]service.Rectangle, len(in.Rectangle))
 	for index, rectangle := range in.Rectangle {
 		rectangles[index] = service.Rectangle{
